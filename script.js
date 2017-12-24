@@ -38,46 +38,51 @@ var submitForm = function() {
     var repPass = document.getElementById("rep-password").value;
     var country = document.getElementById("country").value;
     var phone = document.getElementById("phone").value;
+    var userElement = document.getElementById("user-message");
+    var passElement =  document.getElementById("pass-message");
+    var repeatPassElement = document.getElementById("rep-pass-message");
+    var countryElement = document.getElementById("country-message");
+    var phoneElement = document.getElementById("phone-message");
 
     var correctInput = true;
 
     if (user.length < 5) {
+        userElement.innerHTML = "The supplied username is too short, try again using 5 or more characters<br>";
         correctInput = false;
-        document.getElementById("user-message").innerHTML = "The supplied username is too short, try again using 5 or more characters<br>";
     } else {
         alert("Thank you " + user);
-        document.getElementById("user-message").innerHTML = "";
+        userElement.innerHTML = "";
     }
     
     if (pass.length < 6) {
+        passElement.innerHTML = "The supplied password is too short, try again using 6 or more characters<br>";
         correctInput = false;
-        document.getElementById("pass-message").innerHTML = "The supplied password is too short, try again using 6 or more characters<br>";
     } else {
-        document.getElementById("pass-message").innerHTML = "";
+        passElement.innerHTML = "";
     }
 
     if (pass !== repPass) {
+        repeatPassElement.innerHTML = "The supplied passwords don't match, try again<br>";
         correctInput = false;
-        document.getElementById("rep-pass-message").innerHTML = "The supplied passwords don't match, try again<br>";
     } else {
-        document.getElementById("rep-pass-message").innerHTML = "";
+        repeatPassElement.innerHTML = "";
     }
 
     if (!(country.toLowerCase() === "usa" || country.toLowerCase() === "israel")) {
+        countryElement.innerHTML = "The supplied country is invalid (valid countries are Israel/USA)<br>"
         correctInput = false;
-        document.getElementById("country-message").innerHTML = "The supplied country is invalid (valid countries are Israel/USA)<br>"
     } else {
-        document.getElementById("country-message").innerHTML = "";
+        countryElement.innerHTML = "";
     }
 
     if (phone.length < 15) {
+        phoneElement.innerHTML = "The supplied phone number is too short, try again using 15 or more digits<br>"
         correctInput = false;
-        document.getElementById("phone-message").innerHTML = "The supplied phone number is too short, try again using 15 or more digits<br>"
     } else {
-        document.getElementById("phone-message").innerHTML = "";
+        phoneElement.innerHTML = "";
     }
 
     if (correctInput) {
-        document.getElementById("correct-input").innerHTML = "Well done " + user + "!"; 
+        document.getElementById("correct-input").innerHTML = "Well done " + user + "! All your input is correct :)"; 
     }
 };
