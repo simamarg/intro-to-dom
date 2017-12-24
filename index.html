@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="p1" onmouseenter="changeTextEnter()" onmouseleave="changeTextLeave()">Hello</p>
+
+    <ul id="list" onclick="addItem()">
+        <li>A list item</li>
+    </ul>
+
+    <div id="container"></div>
+
+    <button id="button2" style="margin-top: 25px;" onclick="toggleButton()">Click me!</button>
+
+    <form style="margin-top: 25px;" id="inputForm">
+        Username:
+        <input id="username" type="text" placeholder="Your Name">
+        <br> Email:
+        <input type="e-mail" placeholder="yourname@email.com">
+        <br> Password:
+        <input id="password" type="password">
+        <br> Repeat password:
+        <input id="rep-password" type="password">
+        <br> Phone Number:
+        <input id="phone" type="number">
+        <br> Country:
+        <input id="country" type="text">
+        <br>
+        <button type="button" onclick="submitForm()">Submit</button>
+        <div id="user-message" style="color: red;"></div>
+        <div id="pass-message" style="color: red;"></div>
+        <div id="rep-pass-message" style="color: red;"></div>
+        <div id="country-message" style="color: red;"></div>
+        <div id="phone-message" style="color: red;"></div>
+        <div id="correct-input" style="color: green";></div>
+    </form>
+
+    <script type="text/javascript" src="script.js"></script>
+
+</body>
+
+</html>
